@@ -70,18 +70,20 @@ function makeCounter() {
 // You will need to use the module pattern to achieve this.
 
 function counterFactory(value) {
-  function inc () {
-    return value++;
-  }
-  function dec () {
-    return value--;
-  }
+  var obj = {}
+    obj.inc = function inc(value) {
+      value++;
+      return value;
+    }
+    obj.dec =  function dec(value) {
+      value--;
+      return value;
+    }
   return {
-    return inc;
-    return dec;
-  }
-}
-
+    inc: obj.inc(value),
+    dec: obj.dec(value)
+  };
+};
 
 counter = counterFactory(10);
 
