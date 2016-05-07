@@ -43,10 +43,16 @@ var callFriend = function(){
 /*
   Write a function called makeCounter that makes the following code work properly.
 */  //Code Here
-  
-  
-//Uncomment this once you make your function
-//   var count = makeCounter();
+
+function makeCounter() {
+  var number = 0;
+  function addNumber() {
+    number++;
+    return number;
+  }
+  return addNumber;
+}
+//var count = makeCounter();
 //   count(); // 1
 //   count(); // 2
 //   count(); // 3
@@ -64,11 +70,16 @@ var callFriend = function(){
 // You will need to use the module pattern to achieve this.
 
 function counterFactory(value) {
-  return {}
-
-    // Code inc function
-    // Code dec function
-
+  function inc () {
+    return value++;
+  }
+  function dec () {
+    return value--;
+  }
+  return {
+    return inc;
+    return dec;
+  }
 }
 
 

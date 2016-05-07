@@ -31,8 +31,8 @@ var name = 'Tyler';
 //Create a function called welcome that uses your getName function you created in the previous problem to get the users name,
 //then alerts "Welcome, " plus whatever the users name is.
 
-  function alertName () {
-      alert("Welcome " +getName());
+  function welcome () {
+      alert("Welcome " + getName());
   }
 
 
@@ -43,7 +43,7 @@ var name = 'Tyler';
 
 //What is the difference between arguments and parameters?
 
-//Parameter is what you tell the function to expect when you define it. Arugment is what is passed into the function when the function is called.
+//Parameter is what you tell the function to expect when you define it. Argument is what is passed into the function when the function is called.
 
 
 //////////////////PROBLEM 5////////////////////
@@ -59,7 +59,7 @@ var name = 'Tyler';
 // null
 // undefined
 // NaN (a special Number value meaning Not-a-Number!)
-// You can check if anything meets these values by calling it in the console. You could even write a function to do this.
+// You can check if anything meets these values by calling it in the console. if (!thing == true)
 
 
 //////////////////PROBLEM 6////////////////////
@@ -81,7 +81,7 @@ var name = 'Tyler';
 
 //Now alert the result of invoking newMyName
 
-    alert(newMyName);
+    alert(newMyName());
 
 //////////////////PROBLEM 7////////////////////
 
@@ -90,16 +90,14 @@ var name = 'Tyler';
 //Create a function called outerFn which returns an anonymous function which returns your name.
 
   function outerFn () {
-    var randomFunction = function () {
-        var name = "Matt Higbee";
-        return name;
+    return function () {
+        return 'Matt';
     }
-    return randomFunction();
 }
 
 //Now save the result of invoking outerFn into a variable called innerFn.
 
-  var innerFn = outerFn;
+  var innerFn = outerFn();
 
 //Now invoke innerFn.
 innerFn();
